@@ -12,23 +12,15 @@ Welcome to the repository of "NextGen AI Synthesis," where we combine the power 
 
 ## Getting Started 🚦
 
-To get started with this project, follow these steps:
-
-1. Clone the repository to your local machine:
-
-2. Install the required dependencies:
-
-
-3. Follow the setup instructions in the `setup.md` file to configure your environment.
+- TODO
 
 ## Usage 🛠️
 
-- **Quick Start Guide**: Refer to `quickstart.md` for examples on how to use the models for your applications.
-- **API Documentation**: Detailed API documentation is available in `docs/api.md`.
+- TODO
 
 ## Deployment 🌐
 
-This project is deployed on GCP. For detailed instructions on deployment and management, see `deployment.md`.
+- TODO
 
 ## Contributing 🤝
 
