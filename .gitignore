@@ -121,6 +121,7 @@ celerybeat.pid
 
 # Environments
 .env
+msq_env
 .venv
 env/
 venv/
