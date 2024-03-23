@@ -1,0 +1,6 @@
+MCQ,Choices,Correct
+What is the main characteristic of Deep Learning?,a: Requires manual feature engineering | b: Does not need large datasets | c: Based on artificial neural networks | d: Uses only supervised machine learning,c
+Which type of machine learning technique involves the use of labeled datasets?,a: Supervised Machine Learning | b: Unsupervised Machine Learning | c: Reinforcement Machine Learning | d: Semi-supervised Machine Learning,a
+Which type of neural network is specifically designed for image and video recognition tasks?,a: Feedforward Neural Networks | b: Recurrent Neural Networks | c: Convolutional Neural Networks | d: Deep Belief Networks,c
+What is the main application of Deep Learning in Natural Language Processing?,a: Image classification | b: Sentiment analysis | c: Object detection | d: Clustering,b
+What is one of the challenges in Deep Learning related to the model's complexity?,a: Data availability | b: Computational resources | c: Interpretability | d: Overfitting,c
