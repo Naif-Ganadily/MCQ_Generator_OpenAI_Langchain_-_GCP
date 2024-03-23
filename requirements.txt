@@ -1,5 +1,8 @@
 openai
 langchain
 streamlit
-pythin-dotenv
+python-dotenv
 PyPDF2
+ipykernel
+
+-e . # This is to install all the packages into my virtual environment
