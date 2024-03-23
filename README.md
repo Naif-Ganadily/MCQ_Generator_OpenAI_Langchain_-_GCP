@@ -1,0 +1,1 @@
+# MSQ_Generator_OpenAI_Langchain_-_GCP
