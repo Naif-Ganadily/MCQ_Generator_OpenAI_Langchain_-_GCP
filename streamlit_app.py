@@ -32,7 +32,7 @@ with st.form("user_inputs"):
     if button and uploaded_file is not None and mcq_count and subject and tone:
         with st.spinner("Loading..."):
             try:
-                text = read_file(uploaded_file)
+                text=read_file(uploaded_file)
                 with get_openai_callback() as cb:
                     response = generate_evaluate_chain(
                         {
@@ -48,27 +48,23 @@ with st.form("user_inputs"):
                 st.error("Error during MCQ generation")
 
             else:
+                print(f"Total Tokens:{cb.total_tokens}")
+                print(f"Prompt Tokens:{cb.prompt_tokens}")
+                print(f"Completion Tokens:{cb.completion_tokens}")
+                print(f"Total Cost:{cb.total_cost}")
                 if isinstance(response, dict):
                     quiz = response.get("quiz", None)
                     if quiz is not None:
-                        table_data = get_table_data(quiz)
+                        table_data=get_table_data(quiz)
                         # Check if table_data is not False before attempting to iterate
-                        if table_data:
-                            # Display each MCQ and its options
-                            for i, item in enumerate(table_data, start=1):
-                                st.subheader(f"Question {i}: {item['MCQ']}")
-                                st.text(f"Options: {item['Choices']}")
-                                st.text(f"Correct Answer: {item['Correct']}")
                         
-                            # Display review, if available
-                            review = response.get("review", "")
-                            if review:
-                                st.text_area("Review", value=review, height=100)
+                        # if table_data is not None:
+                        if table_data and table_data is not False:
+                            df=pd.DataFrame(table_data)
+                            df.index=df.index+1
+                            st.table(df)
+                            st.text_area(label="Review", value=response["review"])
                         else:
-                            st.error("Error in getting table data. Please check the quiz format.")
-                    else:
-                        st.write("No quiz data found in the response.")
+                            st.error("Error in generating table data. Please check the input file and parameters.")
                 else:
-                    st.write("Invalid response format from MCQ generation process.")
-
-
+                    st.write(response)

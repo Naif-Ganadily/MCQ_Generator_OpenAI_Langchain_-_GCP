@@ -28,13 +28,10 @@ llm = ChatOpenAI(openai_api_key=key, model_name="gpt-3.5-turbo", temperature=0.7
 template="""
 Text:{text}
 You are an expert MCQ maker. Given the above text, it is your job to \
-create a quiz  of {number} multiple choice questions for {subject} students in {tone} tone. 
+create a quiz of {number} multiple choice questions for {subject} students in {tone} tone. 
 Make sure the questions are not repeated and check all the questions to be conforming the text as well.
-Make sure to format your response like  RESPONSE_JSON below  and use it as a guide. \
-Ensure to make {number} MCQs
-### RESPONSE_JSON
+Ensure to make {number} MCQs in the following JSON format:
 {response_json}
-
 """
 
 
@@ -60,7 +57,7 @@ Check from an expert English Writer of the above quiz:
 """
 quiz_evaluation_prompt = PromptTemplate(
     input_variables=["subject", "quiz"],
-    template=template
+    template=template2
 )
 
 review_chain=LLMChain(llm=llm, prompt=quiz_evaluation_prompt, output_key="review", verbose=True)
