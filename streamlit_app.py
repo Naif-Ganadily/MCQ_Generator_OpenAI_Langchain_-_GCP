@@ -12,7 +12,7 @@ from src.mcqgenerator.logger import logging
 
 
 
-with open(r'C:\Users\ganad\Desktop\Learning with Projects\MSQ_Generator_OpenAI_Langchain_-_GCP\Response.json', 'r') as file:
+with open('Response.json', 'r') as file:
     RESPONSE_JSON = json.load(file)
 
 st.title("MCQs Creater Application using OpenAI and Langchain 🧠🐦🔗")
